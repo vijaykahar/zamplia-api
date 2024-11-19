@@ -12,12 +12,26 @@ const SurveyList = () => {
   const [industry, setIndustry] = useState([]);
   const [search, setSearch] = useState(""); // State for search input
 
-  useEffect(() => {
-    axios
-    .get('https://zamplia-api.onrender.com/api/surveys')
-    .then((response) => {
+  useEffect(async() => {
+    // axios
+    // .get('https://zamplia-api.onrender.com/api/surveys')
+    // .then((response) => {
+    //   setSurveys(response?.data?.result?.data)
+    // })
+    try {
+      const response = await axios.get(
+        'https://surveysupplysandbox.zamplia.com/api/v1/Surveys/GetAllocatedSurveys',
+        {
+          headers: {
+            Accept: 'application/json',
+            'ZAMP-KEY': 'bwiAtId0rUjSeFDB104BFp78zopVtOjs',
+          },
+        }
+      );
       setSurveys(response?.data?.result?.data)
-    })
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
   }, []);
 
   useEffect(() => {
