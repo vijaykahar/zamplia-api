@@ -16,8 +16,13 @@ function Link() {
   useEffect(() => {
     async function getIPAddress() {
       try {
-        const response = await axios.get(`https://zamplia-api.onrender.com/api/ip`);
-        setIP(response?.data);
+        try {
+          const response = await axios.get('https://geolocation-db.com/json/');
+          setIP(response?.data);
+        } catch (error) {
+          console.error('Error:', error.response?.data || error.message);
+          res.status(error.response?.status || 500).json({ error: error.message });
+        }
       } catch (err) {
         setError("Error fetching IP details");
       }
