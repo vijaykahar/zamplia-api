@@ -14,7 +14,7 @@ const SurveyList = () => {
 
   useEffect(() => {
     axios
-    .get('http://localhost:4000/api/surveys')
+    .get('https://zamplia-api.onrender.com/api/surveys')
     .then((response) => {
       setSurveys(response?.data?.result?.data)
     })
@@ -23,14 +23,14 @@ const SurveyList = () => {
   useEffect(() => {
     //Get Lanugage
     axios
-    .get('http://localhost:4000/api/languages')
+    .get('https://zamplia-api.onrender.com/api/languages')
     .then((response) => {
       setLanguages(response?.data?.result?.data)
     })
 
     //get Industry
     axios
-    .get('http://localhost:4000/api/industry')
+    .get('https://zamplia-api.onrender.com/api/industry')
     .then((response) => {
       setIndustry(response?.data?.result?.data)
     })

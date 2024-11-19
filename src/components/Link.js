@@ -16,7 +16,7 @@ function Link() {
   useEffect(() => {
     async function getIPAddress() {
       try {
-        const response = await axios.get(`http://localhost:4000/api/ip`);
+        const response = await axios.get(`https://zamplia-api.onrender.com/api/ip`);
         setIP(response?.data);
       } catch (err) {
         setError("Error fetching IP details");
@@ -48,7 +48,7 @@ function Link() {
       IpAddress: IP?.IPv4,
       TransactionId: PID,
     };
-    const response = await axios.get(`http://localhost:4000/api/link`, {
+    const response = await axios.get(`https://zamplia-api.onrender.com/api/link`, {
       params: obj,
     });
     setLink(response?.data?.result?.data[0]?.LiveLink);
