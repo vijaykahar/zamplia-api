@@ -1,0 +1,153 @@
+/* src/Details.css
+
+h2 {
+    color: #343a40;
+    text-align: center; 
+}
+
+.tabs {
+    display: flex;
+    justify-content: center; 
+    margin-bottom: 20px;
+    width: 25%;
+    margin-top: 20px;
+}
+
+.tab-button {
+    background-color: #9D00FF; 
+    color: white; 
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin: 0 5px; 
+    border-radius: 4px;
+    transition: background-color 0.3s, transform 0.2s; 
+}
+
+.tab-button:hover {
+    background-color: #7a00cc; 
+    transform: scale(1.05); 
+}
+
+.tab-button.active {
+    background-color: #5E00B3;
+    font-weight: bold;
+}
+
+.tab-button:not(.active) {
+    background-color: #e0e0e0; 
+    color: #333; 
+}
+
+.tab-content {
+    padding: 15px;
+    border: 1px solid #ddd; 
+    border-radius: 4px;
+    background-color: #f1f3f5; 
+    margin-top: 10px; 
+} */
+/* Full-height container */
+.tab-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: #F4F4F9;
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Tabs bar styling */
+  .tabs {
+    display: flex;
+    justify-content: space-around;
+    background-color: #341539; /* New background color for tab bar */
+    padding: 12px 0;
+    border-bottom: 2px solid #A0AEC0;
+  }
+  
+  /* Tab button styling */
+  .tabs button {
+    flex: 1;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #FFFFFF; /* Font color changed to white */
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    position: relative;
+  }
+  
+  .tabs button:hover {
+    color: #C084FC; /* Light purple for hover */
+    background-color: #502367; /* Slightly lighter background on hover */
+  }
+  
+  .tabs .active {
+    color: #FFFFFF; /* Gold color for active state text */
+    border-bottom: 3px solid #FFFFFF; /* Gold underline for active tab */
+  }
+  
+  /* Full-size content area */
+  .content-area {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    background-color: #FFFFFF;
+    box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s;
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 768px) {
+    .tabs {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    .content-area {
+      padding: 15px;
+    }
+  }
+  
+
+/* Loader styles */
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height */
+}
+
+.spinner {
+  border: 8px solid #ddd; /* Light gray border */
+  border-top: 8px solid #9D00FF; /* Header color */
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
