@@ -23,7 +23,7 @@ const Details = () => {
   useEffect(() => {
     async function getStats() {
       let survey_id = details.SurveyId;
-      const response = await axios.get(`https://zamplia-api-backend.onrender.com0/api/stats`, {
+      const response = await axios.get(`https://zamplia-api-backend.onrender.com/api/stats`, {
         params: {
           survey_id: survey_id,
         },
@@ -37,7 +37,7 @@ const Details = () => {
     async function getDemographic() {
       let LanguageId = details.LanguageId;
       const response = await axios.get(
-        `https://zamplia-api-backend.onrender.com0/api/demographic`,
+        `https://zamplia-api-backend.onrender.com/api/demographic`,
         {
           params: {
             LanguageId: LanguageId,
@@ -53,7 +53,7 @@ const Details = () => {
     async function getQualification() {
       let survey_id = details.SurveyId;
       const response = await axios.get(
-        `https://zamplia-api-backend.onrender.com0/api/qualification`,
+        `https://zamplia-api-backend.onrender.com/api/qualification`,
         {
           params: {
             survey_id: survey_id,
@@ -74,7 +74,7 @@ const Details = () => {
   useEffect(() => {
     async function getQuota() {
       let survey_id = details.SurveyId;
-      const response = await axios.get(`https://zamplia-api-backend.onrender.com0/api/quota`, {
+      const response = await axios.get(`https://zamplia-api-backend.onrender.com/api/quota`, {
         params: {
           survey_id: survey_id,
         },

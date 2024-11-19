@@ -23,14 +23,14 @@ const SurveyList = () => {
   useEffect(() => {
     //Get Lanugage
     axios
-    .get('https://zamplia-api-backend.onrender.com0/api/languages')
+    .get('https://zamplia-api-backend.onrender.com/api/languages')
     .then((response) => {
       setLanguages(response?.data?.result?.data)
     })
 
     //get Industry
     axios
-    .get('https://zamplia-api-backend.onrender.com0/api/industry')
+    .get('https://zamplia-api-backend.onrender.com/api/industry')
     .then((response) => {
       setIndustry(response?.data?.result?.data)
     })

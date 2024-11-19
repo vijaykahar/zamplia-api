@@ -152,4 +152,4 @@ app.get('/api/languages', async (req, res) => {
     }
   });
 
-app.listen(4000, () => console.log('Proxy running on https://zamplia-api-backend.onrender.com0'));
+app.listen(4000, () => console.log('Proxy running on https://zamplia-api-backend.onrender.com'));
