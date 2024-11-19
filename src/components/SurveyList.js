@@ -12,40 +12,25 @@ const SurveyList = () => {
   const [industry, setIndustry] = useState([]);
   const [search, setSearch] = useState(""); // State for search input
 
-  useEffect(async() => {
-    // axios
-    // .get('https://zamplia-api.onrender.com/api/surveys')
-    // .then((response) => {
-    //   setSurveys(response?.data?.result?.data)
-    // })
-    try {
-      const response = await axios.get(
-        'https://surveysupplysandbox.zamplia.com/api/v1/Surveys/GetAllocatedSurveys',
-        {
-          headers: {
-            Accept: 'application/json',
-            'ZAMP-KEY': 'bwiAtId0rUjSeFDB104BFp78zopVtOjs',
-          },
-        }
-      );
-      console.log("response: ", response, response?.data?.result?.data)
+  useEffect(() => {
+    axios
+    .get('https://zamplia-api-backend.onrender.com/api/surveys')
+    .then((response) => {
       setSurveys(response?.data?.result?.data)
-    } catch(error){
-      console.log("error: ", error)
-    }
+    })
   }, []);
 
   useEffect(() => {
     //Get Lanugage
     axios
-    .get('https://zamplia-api.onrender.com/api/languages')
+    .get('https://zamplia-api-backend.onrender.com0/api/languages')
     .then((response) => {
       setLanguages(response?.data?.result?.data)
     })
 
     //get Industry
     axios
-    .get('https://zamplia-api.onrender.com/api/industry')
+    .get('https://zamplia-api-backend.onrender.com0/api/industry')
     .then((response) => {
       setIndustry(response?.data?.result?.data)
     })

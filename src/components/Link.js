@@ -52,7 +52,7 @@ function Link() {
       IpAddress: IP?.IPv4,
       TransactionId: PID,
     };
-    const response = await axios.get(`https://zamplia-api.onrender.com/api/link`, {
+    const response = await axios.get(`https://zamplia-api-backend.onrender.com/api/link`, {
       params: obj,
     });
     setLink(response?.data?.result?.data[0]?.LiveLink);
