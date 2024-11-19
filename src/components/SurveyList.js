@@ -30,9 +30,7 @@ const SurveyList = () => {
       );
       console.log("response: ", response, response?.data?.result?.data)
       setSurveys(response?.data?.result?.data)
-    } catch (error) {
-      res.status(500).json({ error: error.message });
-    }
+    } 
   }, []);
 
   useEffect(() => {

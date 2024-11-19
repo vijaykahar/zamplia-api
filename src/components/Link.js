@@ -21,7 +21,6 @@ function Link() {
           setIP(response?.data);
         } catch (error) {
           console.error('Error:', error.response?.data || error.message);
-          res.status(error.response?.status || 500).json({ error: error.message });
         }
       } catch (err) {
         setError("Error fetching IP details");
